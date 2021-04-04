@@ -113,8 +113,8 @@
 /dev/block/zram0                                u:object_r:swap_block_device:s0
 
 # files in /vendor
-/vendor/firmware(/.*)?          u:object_r:vendor_firmware_file:s0
-/vendor/bt_firmware(/.*)?       u:object_r:vendor_firmware_file:s0
+/(vendor/firmware|firmware)(/.*)?          u:object_r:vendor_firmware_file:s0
+/(vendor/bt_firmware|bt_firmware)(/.*)?       u:object_r:vendor_firmware_file:s0
 
 /vendor/bin/ATFWD-daemon        u:object_r:vendor_atfwd_exec:s0
 /vendor/bin/hw/android\.hardware\.vr@1\.0-service.crosshatch      u:object_r:hal_vr_default_exec:s0
@@ -326,21 +326,22 @@
 
 # /
 /tombstones                          u:object_r:rootfs:s0
-/vendor/dsp(/.*)?                    u:object_r:adsprpcd_file:s0
+/(vendor/dsp|dsp)(/.*)?              u:object_r:adsprpcd_file:s0
 /vendor/vm-system(/.*)?              u:object_r:vendor_vm_system_file:s0
 
 # /persist
-/mnt/vendor/persist/data(/.*)?       u:object_r:vendor_persist_data_file:s0
-/mnt/vendor/persist/display(/.*)?    u:object_r:vendor_persist_display_file:s0
-/mnt/vendor/persist/drm(/.*)?        u:object_r:vendor_persist_drm_file:s0
-/mnt/vendor/persist/elabel(/.*)?     u:object_r:vendor_persist_elabel_file:s0
-/mnt/vendor/persist/haptics(/.*)?    u:object_r:vendor_persist_haptics_file:s0
-/mnt/vendor/persist/hlos_rfs(/.*)?   u:object_r:vendor_persist_rfs_shared_hlos_file:s0
-/mnt/vendor/persist/rfs(/.*)?        u:object_r:vendor_persist_rfs_file:s0
-/mnt/vendor/persist/sensors(/.*)?    u:object_r:vendor_persist_sensors_file:s0
-/mnt/vendor/persist/time(/.*)?       u:object_r:vendor_persist_time_file:s0
-/mnt/vendor/persist/audio(/.*)?      u:object_r:vendor_persist_audio_file:s0
-/mnt/vendor/persist/feature_enabler_client(/.*)? u:object_r:vendor_persist_feature_enabler_file:s0
+/(mnt/vendor/persist|persist)(/.*)?            u:object_r:mnt_vendor_file:s0
+/(mnt/vendor/persist|persist)/data(/.*)?       u:object_r:vendor_persist_data_file:s0
+/(mnt/vendor/persist|persist)/display(/.*)?    u:object_r:vendor_persist_display_file:s0
+/(mnt/vendor/persist|persist)/drm(/.*)?        u:object_r:vendor_persist_drm_file:s0
+/(mnt/vendor/persist|persist)/elabel(/.*)?     u:object_r:vendor_persist_elabel_file:s0
+/(mnt/vendor/persist|persist)/haptics(/.*)?    u:object_r:vendor_persist_haptics_file:s0
+/(mnt/vendor/persist|persist)/hlos_rfs(/.*)?   u:object_r:vendor_persist_rfs_shared_hlos_file:s0
+/(mnt/vendor/persist|persist)/rfs(/.*)?        u:object_r:vendor_persist_rfs_file:s0
+/(mnt/vendor/persist|persist)/sensors(/.*)?    u:object_r:vendor_persist_sensors_file:s0
+/(mnt/vendor/persist|persist)/time(/.*)?       u:object_r:vendor_persist_time_file:s0
+/(mnt/vendor/persist|persist)/audio(/.*)?      u:object_r:vendor_persist_audio_file:s0
+/(mnt/vendor/persist|persist)/feature_enabler_client(/.*)? u:object_r:vendor_persist_feature_enabler_file:s0
 
 # /qmcs
 /mnt/vendor/qmcs(/.*)?         u:object_r:vendor_qmcs_file:s0
@@ -363,10 +364,10 @@
 /sys/devices/virtual/xt_idletimer/timers(/.*)?                      u:object_r:vendor_sysfs_data:s0
 
 #persist_bluetooth_file
-/mnt/vendor/persist/bluetooth(/.*)?                                 u:object_r:vendor_persist_bluetooth_file:s0
+/(mnt/vendor/persist|persist)/bluetooth(/.*)?                                 u:object_r:vendor_persist_bluetooth_file:s0
 
 #power off alarm file
-/mnt/vendor/persist/alarm(/.*)?                                     u:object_r:vendor_persist_alarm_file:s0
+/(mnt/vendor/persist|persist)/alarm(/.*)?                                     u:object_r:vendor_persist_alarm_file:s0
 
 /(vendor|system/vendor)/bin/hbtp_daemon                             u:object_r:vendor_hbtp_exec:s0
 /(vendor|system/vendor)/bin/sscrpcd                                 u:object_r:vendor_sensors_exec:s0
